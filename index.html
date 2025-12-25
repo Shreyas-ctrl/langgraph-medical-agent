@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XYZ Hospital AI</title>
+</head>
+<body>
+  <h2>Medical Symptom Checker</h2>
+
+  <input id="symptom" placeholder="Enter your symptom" />
+  <button onclick="send()">Submit</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function send() {
+      const symptom = document.getElementById("symptom").value;
+
+      const res = await fetch("http://127.0.0.1:8000/analyze", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ symptom })
+      });
+
+      const data = await res.json();
+      document.getElementById("result").textContent =
+        "Category: " + data.category + "\n\n" + data.answer;
+    }
+  </script>
+</body>
+</html>
