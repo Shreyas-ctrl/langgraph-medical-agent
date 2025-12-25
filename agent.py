@@ -5,6 +5,7 @@ from langchain_core.messages import HumanMessage
 
 # 🔐 API KEY (use environment variable, NOT getpass on web)
 
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     temperature=0.2
