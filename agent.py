@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 
 # 🔐 API KEY (use environment variable, NOT getpass on web)
-#git os.environ["GOOGLE_API_KEY"] = "AIzaSyCvJrkLBid7Qe8Z5TsqpEwT50rfUzAbXnE"
+
 
 llm = ChatGoogleGenerativeAI(
     model="models/gemini-2.5-flash",
